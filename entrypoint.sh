@@ -48,13 +48,16 @@ if [[ $INPUT_SLIDES_SKIP_ASCIIDOCTOR_BUILD == false ]]; then
     find . -name "*$INPUT_ADOC_FILE_EXT" -exec git rm -f --cached {} \;
 fi
 
-PDF_FILE="ebook.pdf"
-if [[ $INPUT_PDF_BUILD == true ]]; then
+PDF_FILE="exbook.pdf"
+    echo "Converting AsciiDoc files to PDF!!!"
     INPUT_EBOOK_MAIN_ADOC_FILE="$INPUT_EBOOK_MAIN_ADOC_FILE$INPUT_ADOC_FILE_EXT"
     MSG="Building $PDF_FILE ebook from $INPUT_EBOOK_MAIN_ADOC_FILE"
     echo "$MSG"
     asciidoctor-pdf "$INPUT_EBOOK_MAIN_ADOC_FILE" -o "$PDF_FILE" $INPUT_ASCIIDOCTOR_PARAMS
-fi
+    
+    
+ls
+
 
 SLIDES_FILE="slides.html"
 if [[ $INPUT_SLIDES_BUILD == true ]]; then
