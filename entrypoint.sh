@@ -44,20 +44,15 @@ fi
 # If no command is provided, the default value is just an echo command.
 eval "$INPUT_PRE_BUILD"
 
-if [[ $INPUT_SLIDES_SKIP_ASCIIDOCTOR_BUILD == false ]]; then
-    echo "Converting AsciiDoc files to HTML"
-    find . -name "*$INPUT_ADOC_FILE_EXT" -exec asciidoctor -b html $INPUT_ASCIIDOCTOR_PARAMS {} \;
-    find . -name "README.html" -execdir ln -s "README.html" "index.html" \;
-    find . -name "*$INPUT_ADOC_FILE_EXT" -exec git rm -f --cached {} \;
-fi
+
 
 PDF_FILE="exxbook.pdf"
     echo "Now onverting AsciiDoc files to PDF!!!"
     INPUT_EBOOK_MAIN_ADOC_FILE="$INPUT_EBOOK_MAIN_ADOC_FILE$INPUT_ADOC_FILE_EXT"
     MSG="Building $PDF_FILE ebook from $INPUT_EBOOK_MAIN_ADOC_FILE"
     echo "$MSG"
-    asciidoctor-pdf "$INPUT_EBOOK_MAIN_ADOC_FILE" -o "$PDF_FILE" $INPUT_ASCIIDOCTOR_PARAMS
-    
+  # asciidoctor-pdf "$INPUT_EBOOK_MAIN_ADOC_FILE" -o "$PDF_FILE" $INPUT_ASCIIDOCTOR_PARAMS
+    asciidoctor-pdf "$INPUT_EBOOK_MAIN_ADOC_FILE" -a pdf-theme=some-theme.yml  -o "$PDF_FILE" $INPUT_ASCIIDOCTOR_PARAMS
     
 ls
 
