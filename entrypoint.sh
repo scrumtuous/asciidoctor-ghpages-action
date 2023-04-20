@@ -3,6 +3,9 @@
 # Exit if a command fails
 set -e
 
+
+echo "HERE WE GO!!!"
+
 OWNER="$(echo "$GITHUB_REPOSITORY" | cut -d'/' -f 1)"
 
 if [[ "$INPUT_ADOC_FILE_EXT" != .* ]]; then
