@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM asciidoctor/docker-asciidoctor:latest
+FROM asciidoctor/docker-asciidoctor:1.45
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
