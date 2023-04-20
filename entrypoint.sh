@@ -4,7 +4,7 @@
 set -e
 
 
-echo "HERE WE GO!!!"
+echo "HERE WE GO Now!!!!"
 
 OWNER="$(echo "$GITHUB_REPOSITORY" | cut -d'/' -f 1)"
 
@@ -51,8 +51,8 @@ if [[ $INPUT_SLIDES_SKIP_ASCIIDOCTOR_BUILD == false ]]; then
     find . -name "*$INPUT_ADOC_FILE_EXT" -exec git rm -f --cached {} \;
 fi
 
-PDF_FILE="exbook.pdf"
-    echo "Converting AsciiDoc files to PDF!!!"
+PDF_FILE="exxbook.pdf"
+    echo "Now onverting AsciiDoc files to PDF!!!"
     INPUT_EBOOK_MAIN_ADOC_FILE="$INPUT_EBOOK_MAIN_ADOC_FILE$INPUT_ADOC_FILE_EXT"
     MSG="Building $PDF_FILE ebook from $INPUT_EBOOK_MAIN_ADOC_FILE"
     echo "$MSG"
