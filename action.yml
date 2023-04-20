@@ -19,7 +19,7 @@ inputs:
     required: false
   pdf_build:
     description: 'Defines if a PDF ebook should be built along with the html files. That will generate an ebook.pdf file inside the gh-pages branch.'
-    default: 'false'
+    default: 'true'
     required: false
   ebook_main_adoc_file:
     description: 'Defines the name of the main AsciiDoc file that will be used if you are generating an ebook in PDF or any other supported format. For instance, if the main ebook file is "ebook.adoc", just inform "ebook" here.'
