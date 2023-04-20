@@ -1,0 +1,36 @@
+extends: default-with-fallback-font
+font:
+  catalog:
+    merge: true 
+    Verdana:
+      normal: verdana-normal.ttf
+      italic: verdana-italic.ttf
+      bold: verdana-bold.ttf
+      bold_italic: verdana-bold_italic.ttf
+    Arial:
+      normal: arial-normal.ttf
+      italic: arial-italic.ttf
+      bold: arial-bold.ttf
+      bold_italic: arial-bold_italic.ttf
+base:
+  font_color: #111111
+heading:
+  font_family: Arial
+quote:
+  font_family: Arial
+  font_size: 10
+
+heading:
+  font_family: Arial
+
+  h1-font-size: $base-font-size * 1.7
+  h1-margin-bottom: 10
+  h1-margin-page-top: 1
+
+  h2-font-size: $base-font-size * 1.5
+
+
+  h3-font-size: $base-font-size * 1.4
+
+
+  
